@@ -1,6 +1,6 @@
 # Curso básico de postgresql da Alura  
 
-##Instalação do Postgres e PgAdmin4  
+## Instalação do Postgres e PgAdmin4  
 
 
 a. Instalação do postgress no ubuntu na versão 12:  https://www.postgresql.org/download/linux/ubuntu/  
@@ -28,7 +28,7 @@ j. Para verificar as tabelas dentro do banco: \dt
 Portanto, o psql é pra manipular o postgres através do terminal. Com o -h define a localização do servidor de banco de dados que pretende se conectar, o  \l te mostra os bancos que você tem e o \dt as tabelas dentro daquele banco  
 
 
-##PgAdmin4  
+## PgAdmin4  
 
 
 a. Instalação o pgadmin https://www.dio.me/articles/instalando-o-pgadmin4-no-ubuntu-dicas-e-passos-simples  
@@ -47,7 +47,7 @@ Para testar a conexão com o banco, inserir a query “SELECT NOW();” no query
 ![img](/midia/testConnection.png)  
 
 
-##Observações gerais do PSQL
+## Observações gerais do PSQL
 
 - **Diferença entre o prompt "=#" e "-#"**  
 
