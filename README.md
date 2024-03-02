@@ -144,11 +144,11 @@ SELECT * FROM nome_da_tabela
 
 Ou, dar o refresh no banco
 
-## Preencher a tabela  
+## Manipulando dados na tabela   
 
 Para preencher a tabela é necessário trazer o nome da tabela, os campos que pretende preencher e seus dados.  
 
-**Criação de Dados**   
+**- Criação de Dados**   
 INSERT INTO nome_da_tabela (nome_campo_1, nome_campo_2, nome_campo_4)
 VALUES ('valor_campo1', 'valor_campo2', 'valor_campo4');  
 
@@ -156,13 +156,13 @@ Obs: o campo de tipo "serial" não precisa ser inserido, isso será feito automa
 
 ![img](/midia/criacaoDados.png)  
 
-**Edição de Dados**  
+**- Edição de Dados**  
 
 UPDATE nome_da_tabela SET nome_campo = 'valor_campo' WEHERE campo_da_condicao = 'valor_da_condição'  
 
 ![img](/midia/edicaoDados.png)
 
-**Deleção de Dados**  
+**- Deleção de Dados**  
 
 DELETE FROM nome_da_tabela WHERE campo_da_condicao = 'valor_da_condição'  
 

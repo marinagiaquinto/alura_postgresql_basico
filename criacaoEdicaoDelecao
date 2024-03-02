@@ -1,3 +1,5 @@
+
+--Criação da tabela com os principais tipos de dados utilizados
 CREATE TABLE aluno (
 	id SERIAL,
 	nome VARCHAR(255),
@@ -16,6 +18,7 @@ CREATE TABLE aluno (
 SELECT * FROM aluno;
 
 
+--Preenchimento dos dados
 INSERT INTO aluno (
 	nome,
 	CPF,
@@ -42,14 +45,13 @@ VALUES (
 	'2020-02-08 12:32:45'
 )
 
-
+--Criar sempre um select antes pra ter certeza que é esse o dado que deseja alterar
 SELECT *
     FROM aluno
 WHERE id = 1
-//Criar sempre um select antes pra ter certeza que é esse o dado que deseja alterar
 
 
-
+--Edição dos dados da tabela
 UPDATE aluno
 	SET
 	nome = 'Nico',
@@ -63,15 +65,16 @@ UPDATE aluno
 	hora_aula = '10:30:20',
 	marticulado_em = '2001-02-21'
 	WHERE id = 1
-//Edição dos dados da tabela
+
 	
-	
+--Criar sempre um select antes pra ter certeza que é esse o dado que deseja deletar	
 SELECT *
 	FROM aluno
 	WHERE nome = 'Nico'
-//Criar sempre um select antes pra ter certeza que é esse o dado que deseja deletar
+	
 
+--NÃO ESQUECER O WHERE PRA NÃO APAGAR A TABELA TODA
 DELETE
 	FROM aluno
 	WHERE nome = 'Nico'
-// NÃO ESQUECER O WHERE PRA NÃO APAGAR A TABELA TODA
+
