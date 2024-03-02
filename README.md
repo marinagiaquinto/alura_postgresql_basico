@@ -149,6 +149,7 @@ Ou, dar o refresh no banco
 Para preencher a tabela é necessário trazer o nome da tabela, os campos que pretende preencher e seus dados.  
 
 **- Criação de Dados**   
+
 INSERT INTO nome_da_tabela (nome_campo_1, nome_campo_2, nome_campo_4)
 VALUES ('valor_campo1', 'valor_campo2', 'valor_campo4');  
 

@@ -1,0 +1,63 @@
+--Teste de erro para tipo de dados
+
+--nome VARCHAR(255)
+-- + 255
+-- vazio '' e null (criação sem setar a coluna em questão)
+-- caracteres especiais
+-- número e boolean
+
+
+--CPF CHAR(11)
+-- + 11 caracteres
+-- - de 11 caracteres (preenche com zero?)
+-- vazio '' e null
+-- texto e boolean
+
+
+--Observação TEXT
+-- caracteres especiais
+-- vazio '' e null
+-- número
+
+
+--idade INTEGER
+-- positivo, negativo, decimal (com vírgula e ponto)
+-- vazio '' e null
+-- texto e boolean
+
+
+--dinheiro NUMERIC (10,2)
+-- positivo, negativo, decimal (com vírgula e ponto)
+-- acima do limite de casas (antes e depois da vírgula)
+-- vazio '' e null
+-- texto e boolean
+
+
+--altura REAL
+-- positivo, negativo, decimal (com vírgula e ponto)
+-- acima do limite de casas (antes e depois da vírgula)
+-- vazio '' e null
+-- texto e boolean
+
+--ativo BOOLEAN
+-- valores não booleanos (texto, números)
+-- maiúsculo e minúsculo
+-- vazio '' e null
+
+--data_nascimento DATE
+-- formatos inválidos (01-02-2020; 01/02/2020; 2020.01.05; 25366-253-256; 00-01-02; 2020-1-1)
+-- dia e mês inexistente (2020-02-30; 2020-15-01; 2020-02-60)
+-- vazio '' e null
+-- texto, número e boolean
+
+--hora_aula TIME
+-- formatos inválidos (12h 30m; 12:3; 12.50; 12:32: ; )
+-- dia e mês inexistente (25:00:00; 12:61:00; 12:20:61; 000000)
+-- vazio '' e null
+-- texto, número e boolean
+
+--marticulado_em TIMESTAMP
+-- formatos inválidos 
+-- dia e mês inexistente
+-- vazio '' e null
+-- texto e número
