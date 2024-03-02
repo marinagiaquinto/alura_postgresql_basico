@@ -95,10 +95,10 @@ Numérico
 
 **Serial** - só tem números positivos e possui incremento automático. Ou seja, cada vez que cria-se um dado nele, acrescenta-se +1 no valor anterior. Utilizado, por exemplo, na criação de id;  
 
-**Real** - é limitada pela precisão de 6 dígitos e pelo formato de ponto flutuante. Portanto, valores muito pequenos podem ser arredondados para zero, e valores muito grandes podem resultar em overflow (ex:1.0e38). Pode armazenar números positivos, negativos ou zero e é adequado para muitas operações matemáticas simples, como adição, subtração, multiplicação e divisão. 
+**Real** - é limitada pela precisão de 6 dígitos e pelo formato de ponto flutuante. Portanto, valores muito pequenos podem ser arredondados para zero, e valores muito grandes podem resultar em overflow (ex:1.0e38). Pode armazenar números positivos, negativos ou zero e é adequado para muitas operações matemáticas simples, como adição, subtração, multiplicação e divisão. O separador precisa ser ponto.
 
 **Numeric**/ **Decimal** (sinônimos) - utilizado armazenar números com precisão fixa ou variável, dependendo da declaração  
-(ex: NUMERIC(10, 2) 10 representa o número total de dígitos e 2 representa o número de dígitos após o ponto decimal -> 14562359,62 ). Pode armazenar números positivos, negativos ou zero;  
+(ex: NUMERIC(10, 2) 10 representa o número total de dígitos e 2 representa o número de dígitos após o ponto decimal -> 14562359.62 ). Pode armazenar números positivos, negativos ou zero e o separador precisa ser ponto;  
 
 
 ![img](/midia/tipo_texto.png)  
@@ -143,3 +143,28 @@ Para visualizar a tabela criada:
 SELECT * FROM nome_da_tabela  
 
 Ou, dar o refresh no banco
+
+## Preencher a tabela  
+
+Para preencher a tabela é necessário trazer o nome da tabela, os campos que pretende preencher e seus dados.  
+
+**Criação de Dados**   
+INSERT INTO nome_da_tabela (nome_campo_1, nome_campo_2, nome_campo_4)
+VALUES ('valor_campo1', 'valor_campo2', 'valor_campo4');  
+
+Obs: o campo de tipo "serial" não precisa ser inserido, isso será feito automaticamente.  
+
+![img](/midia/criacaoDados.png)  
+
+**Edição de Dados**  
+
+UPDATE nome_da_tabela SET nome_campo = 'valor_campo' WEHERE campo_da_condicao = 'valor_da_condição'  
+
+![img](/midia/edicaoDados.png)
+
+**Deleção de Dados**  
+
+DELETE FROM nome_da_tabela WHERE campo_da_condicao = 'valor_da_condição'  
+
+![img](/midia/delecaoDados.png)
+
