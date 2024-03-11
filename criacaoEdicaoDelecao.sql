@@ -78,3 +78,5 @@ DELETE
 	FROM aluno
 	WHERE nome = 'Nico'
 
+--EDITAR NOME DA COLUNA NA TABELA
+ALTER TABLE aluno RENAME COLUMN marticulado_em TO matriculado_em
