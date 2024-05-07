@@ -171,11 +171,11 @@ DELETE FROM nome_da_tabela WHERE campo_da_condicao = 'valor_da_condição'
 
 
 
-**## Chave Primária e Chave Estrangeira**  
+## Chave Primária e Chave Estrangeira  
 
 Ambas as chaves possuem como objetivo manter a integridade e consistência dos dados dentro do banco.  
 
-**# Chave Primária (PRIMARY KEY)**  
+# Chave Primária (PRIMARY KEY)   
 
 Ao definir uma chave primária visa-se garantir que cada registro da tabela seja único.
 Tendo isso por princípio, ao definir uma chave primária (PRIMARY KEY) se define por padrão a coluna como: NOT NULL e UNIQUE.
@@ -187,7 +187,7 @@ Com ela se torna possível a identificação de cada registro da tabela.
 ![img](/midia/primaryKey_unique.png)  
 
 
-**## Chave Estrangeira (FOREIGN KEY)**  
+## Chave Estrangeira (FOREIGN KEY)  
 
 Uma chave estrangeira em um banco de dados relacional é um campo ou conjunto de campos em uma tabela que se refere à chave primária (ou a uma chave candidata única) em outra tabela. Ela estabelece uma relação entre as duas tabelas, permitindo a criação de associações entre os dados nelas contidos.  
 
@@ -201,7 +201,7 @@ Quando uma chave estrangeira é definida em uma tabela, normalmente são aplicad
 ![img](/midia/fk_cursoInconsistente.png)  
 
 
-**## CASCADE**  
+## CASCADE  
 
 Por padrão, quando estabelecemos um relacionamento entre tabelas sem setar nenhuma restrição, é definido por default que não é 
 possível realizar edições em uma tabela se ela possuir um dado a ela relacionado em outra tabela. Essa restrição é o que garante 
@@ -218,7 +218,7 @@ Atenção: o cascade é sempre setado na chave estrangeira das tabelas que possu
 ![img](/midia/cascade.png)  
 
 
-**## JOIN**  
+## JOIN  
 
 JOIN permite a junção de duas tabelas a partir de diferentes estratégias.  
 É usado para criar um relacionamento dos dados de diferentes tabelas.  
@@ -244,7 +244,7 @@ CROSS JOIN - Realiza uma relação de todos para todos, independente de qualquer
 ![img](/midia/CROSS_JOIN.png)  
 
 
-**# Destrinchando o LEFT JOIN com um JOIN combinado.**  
+# Destrinchando o LEFT JOIN com um JOIN combinado.  
 
 **1º parte da consulta:**  
 
