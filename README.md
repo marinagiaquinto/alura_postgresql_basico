@@ -167,5 +167,123 @@ UPDATE nome_da_tabela SET nome_campo = 'valor_campo' WEHERE campo_da_condicao = 
 
 DELETE FROM nome_da_tabela WHERE campo_da_condicao = 'valor_da_condição'  
 
-![img](/midia/delecaoDados.png)
+![img](/midia/delecaoDados.png)  
+
+
+
+**##Chave Primária e Chave Estrangeira**  
+
+Ambas as chaves possuem como objetivo manter a integridade e consistência dos dados dentro do banco.  
+
+**#Chave Primária (PRIMARY KEY)**  
+
+Ao definir uma chave primária visa-se garantir que cada registro da tabela seja único.
+Tendo isso por princípio, ao definir uma chave primária (PRIMARY KEY) se define por padrão a coluna como: NOT NULL e UNIQUE.
+Com ela se torna possível a identificação de cada registro da tabela.  
+ 
+
+![img](/midia/primaryKey_notNull.png)  
+
+![img](/midia/primaryKey_unique.png)  
+
+
+**##Chave Estrangeira (FOREIGN KEY)**  
+
+Uma chave estrangeira em um banco de dados relacional é um campo ou conjunto de campos em uma tabela que se refere à chave primária (ou a uma chave candidata única) em outra tabela. Ela estabelece uma relação entre as duas tabelas, permitindo a criação de associações entre os dados nelas contidos.  
+
+A chave estrangeira desempenha um papel crucial na implementação da integridade referencial, que é a consistência dos dados entre tabelas relacionadas. Isso significa que as relações entre os registros em diferentes tabelas devem ser mantidas de forma consistente e válida.  
+
+Quando uma chave estrangeira é definida em uma tabela, normalmente são aplicadas restrições referenciais, que garantem que os valores na chave estrangeira correspondam a valores existentes na chave primária da tabela referenciada (ou a outra coluna única, dependendo do caso). Isso impede que sejam inseridos valores inválidos, mantendo a integridade dos dados.  
+
+![img](/midia/fk_alunoInconsistente.png)  
+
+
+![img](/midia/fk_cursoInconsistente.png)  
+
+
+**##CASCADE**  
+
+Por padrão, quando estabelecemos um relacionamento entre tabelas sem setar nenhuma restrição, é definido por default que não é 
+possível realizar edições em uma tabela se ela possuir um dado a ela relacionado em outra tabela. Essa restrição é o que garante 
+que a consistência dos dados seja mantida, evitando que um dado seja editado/apagado de uma tabela e não seja modificado nas demais.  
+
+![img](/midia/bloqueioDeExclusaoDefault.png)  
+
+Para alterar essa cláusula (RESTRICT), temos que utilizar o CASCADE. Com ele, permitimos que a edição/exclusão seja feita em dados
+que possuam relação com outras tabelas CONTANTO QUE esse dado também seja editado/excluído.   
+Portanto, com ele se faz uma edição/exclusão em cascata, retirando a restrição e garantindo ainda sim a consistência dos dados no banco.  
+
+Atenção: o cascade é sempre setado na chave estrangeira das tabelas que possuem relacionamento.  
+
+![img](/midia/cascade.png)  
+
+
+**##JOIN**  
+
+JOIN permite a junção de duas tabelas a partir de diferentes estratégias.  
+É usado para criar um relacionamento dos dados de diferentes tabelas.  
+
+JOIN - Cria uma intersecção entre duas tabelas a partir da igualdade entre elas. Nele são mantidos apenas o que for igual em ambas  
+
+![img](/midia/JOIN.png)  
+
+LEFT JOIN - Cria uma intersecção entre duas tabelas mantendo todos os dados da tabela da esquerda e preservando apenas os dados da tebala da direita que tiveram relação de igualdade com a primeira tabela  
+
+![img](/midia/LEFT_JOIN.png)  
+
+RIGHT JOIN - Cria uma intersecção entre duas tabelas mantendo todos os dados da tabela da direita e preservando apenas os dados da tebala da esquerda que tiveram relação de igualdade com a primeira tabela  
+
+![img](/midia/RIGHT_JOIN.png)  
+
+FULL JOIN - Uni ambas as tabelas preservando todos os dados de ambas e fazendo uma intersecção nos dados que possuem relação de igualdade
+
+![img](/midia/FULL_JOIN.png)   
+
+CROSS JOIN - Realiza uma relação de todos para todos, independente de qualquer igualdade.
+
+![img](/midia/CROSS_JOIN.png)  
+
+
+**#Destrinchando o LEFT JOIN com um JOIN combinado.**  
+
+**1º parte da consulta:**  
+
+SELECT *  
+	FROM aluno  
+	LEFT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id  
+
+
+
+- Neste LEFT JOIN, a tabela da esquerda é aluno e a tabela da direita é aluno_curso.  
+- O critério de junção é a igualdade entre as colunas aluno_id em aluno_curso e id em aluno.  
+- A tabela à esquerda (aluno) é preservada completa. Se não houver correspondência na tabela aluno_curso para um aluno específico, os valores das colunas na tabela aluno_curso serão nulos para esse aluno no resultado da consulta.  
+
+
+![img](/midia/dest_join_1.png)  
+
+
+**2º parte da consulta:**  
+
+SELECT *  
+	FROM aluno  
+	LEFT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id  
+	LEFT JOIN curso            ON curso.id                       = aluno_curso.curso_id   
+
+
+- No segundo LEFT JOIN a tabela da esquerda é o resultado do primeiro LEFT JOIN (aluno combinado com aluno_curso) e a tabela da direita é curso.  
+- O critério de junção é o resultado do primeiro LEFT JOIN (que inclui aluno e aluno_curso) com registros correspondentes na tabela curso com base na igualdade entre as colunas id em curso e curso_id em aluno_curso.  
+
+![img](/midia/dest_join_2.png)  
+
+
+Se não quiser evidenciar apenas colunas específicas pro usuário:  
+
+SELECT aluno AS "Nome do Aluno",  
+	   curso AS "Nome do Curso"  
+	FROM aluno  
+	LEFT JOIN aluno_curso ON aluno_curso.aluno_id = aluno.id  
+	LEFT JOIN curso       ON curso.id             = aluno_curso.curso_id  
+
+![img](/midia/dest_join_3.png)  
+
 
